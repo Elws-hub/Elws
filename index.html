@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,19 @@
     <title>Elws | Personal Profile & Product</title>
 
     <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,6 +34,7 @@
             max-width: 520px;
             margin: auto;
         }
+
 
         /* =========================
            PROFILE
@@ -109,13 +120,14 @@
 
 
         /* =========================
-           SECTION
+           SECTION TITLE
         ========================== */
 
         .section-title {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 15px;
+            margin-top: 10px;
         }
 
 
@@ -127,7 +139,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .category {
@@ -149,13 +161,14 @@
 
 
         /* =========================
-           PRODUCT
+           PRODUCT GRID
         ========================== */
 
         .products {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 35px;
         }
 
         .product {
@@ -163,37 +176,42 @@
             border-radius: 18px;
             overflow: hidden;
             box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .product:hover {
+            transform: translateY(-4px);
         }
 
         .product img {
             width: 100%;
-            height: 240px;
+            height: 180px;
             object-fit: cover;
             display: block;
         }
 
         .product-info {
-            padding: 18px;
+            padding: 14px;
             text-align: left;
         }
 
         .product-name {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             margin-bottom: 6px;
         }
 
         .product-desc {
             color: #777;
-            font-size: 13px;
-            margin-bottom: 12px;
-            line-height: 1.5;
+            font-size: 12px;
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
 
         .product-price {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .buy-button {
@@ -201,15 +219,31 @@
             text-align: center;
             background: #222;
             color: white;
-            padding: 13px;
+            padding: 10px;
             border-radius: 10px;
             text-decoration: none;
+            font-size: 13px;
             font-weight: bold;
             transition: 0.2s;
         }
 
         .buy-button:hover {
             background: #444;
+        }
+
+
+        /* =========================
+           EMPTY CATEGORY
+        ========================== */
+
+        .coming-soon {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
         }
 
 
@@ -231,16 +265,56 @@
 
         @media (max-width: 400px) {
 
+            body {
+                padding: 25px 12px;
+            }
+
             .profile h1 {
                 font-size: 26px;
             }
 
             .categories {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .category {
+                padding: 13px 8px;
+                font-size: 13px;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
 
             .product img {
-                height: 210px;
+                height: 160px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-name {
+                font-size: 15px;
+            }
+
+            .product-desc {
+                font-size: 11px;
+            }
+
+            .product-price {
+                font-size: 15px;
+            }
+
+            .buy-button {
+                padding: 9px 5px;
+                font-size: 12px;
+            }
+
+            .social {
+                gap: 8px;
             }
 
             .social a {
@@ -251,6 +325,7 @@
 
     </style>
 </head>
+
 
 <body>
 
@@ -263,9 +338,11 @@
 
     <div class="profile">
 
-        <img src="foto%20profil.jpeg"
-             alt="Elws"
-             class="profile-photo">
+        <img
+            src="foto%20profil.jpeg"
+            alt="Elws"
+            class="profile-photo"
+        >
 
         <h1>Elws</h1>
 
@@ -278,12 +355,12 @@
          TOKO UTAMA
     ========================== -->
 
-    <a href="https://collshp.com/glowofficestyle"
-       target="_blank"
-       class="main-store">
-
+    <a
+        href="https://collshp.com/glowofficestyle"
+        target="_blank"
+        class="main-store"
+    >
         🛍️ Kunjungi Toko Saya
-
     </a>
 
 
@@ -293,18 +370,18 @@
 
     <div class="social">
 
-        <a href="https://www.instagram.com/elwsardiant?stkn=MWd2eDNqMDhvaHF3cQ=="
-           target="_blank">
-
+        <a
+            href="https://www.instagram.com/elwsardiant?stkn=MWd2eDNqMDhvaHF3cQ=="
+            target="_blank"
+        >
             📸 Instagram
-
         </a>
 
-        <a href="https://www.tiktok.com/@webid3"
-           target="_blank">
-
+        <a
+            href="https://www.tiktok.com/@webid3"
+            target="_blank"
+        >
             🎵 TikTok
-
         </a>
 
     </div>
@@ -348,25 +425,27 @@
 
 
     <!-- =========================
-         PRODUK REKOMENDASI
+         TRENDING
     ========================== -->
 
-    <div class="section-title" id="trending">
+    <div
+        class="section-title"
+        id="trending"
+    >
         🔥 Trending
     </div>
-
 
     <div class="products">
 
 
-        <!-- =====================
-             SENKA
-        ====================== -->
+        <!-- SENKA -->
 
         <div class="product">
 
-            <img src="senka.jpg"
-                 alt="Senka">
+            <img
+                src="senka.jpg"
+                alt="Senka"
+            >
 
             <div class="product-info">
 
@@ -382,12 +461,12 @@
                     Cek Harga
                 </div>
 
-                <a href="https://s.shopee.co.id/AAH18sDmZF"
-                   target="_blank"
-                   class="buy-button">
-
+                <a
+                    href="https://s.shopee.co.id/AAH18sDmZF"
+                    target="_blank"
+                    class="buy-button"
+                >
                     🛒 Beli Sekarang
-
                 </a>
 
             </div>
@@ -395,14 +474,14 @@
         </div>
 
 
-        <!-- =====================
-             PYUNKANG
-        ====================== -->
+        <!-- PYUNKANG YUL -->
 
         <div class="product">
 
-            <img src="pyunkang.jpg"
-                 alt="Pyunkang Yul">
+            <img
+                src="pyunkang.jpg"
+                alt="Pyunkang Yul"
+            >
 
             <div class="product-info">
 
@@ -418,90 +497,11 @@
                     Cek Harga
                 </div>
 
-                <a href="https://s.shopee.co.id/2qUQQ7sSR7"
-                   target="_blank"
-                   class="buy-button">
-
-                    🛒 Beli Sekarang
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-        <!-- =========================
-         PRODUK TRENDING
-    ========================== -->
-
-    <div class="section-title" id="trending">
-        🔥 Trending
-    </div>
-
-    <div class="products">
-
-        <!-- =====================
-             SENKA
-        ====================== -->
-
-        <div class="product">
-
-            <img src="senka.jpg"
-                 alt="Senka">
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Senka
-                </div>
-
-                <div class="product-desc">
-                    Produk pilihan yang saya rekomendasikan.
-                </div>
-
-                <div class="product-price">
-                    Cek Harga
-                </div>
-
-                <a href="https://s.shopee.co.id/AAH18sDmZF"
-                   target="_blank"
-                   class="buy-button">
-                    🛒 Beli Sekarang
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================
-             PYUNKANG
-        ====================== -->
-
-        <div class="product">
-
-            <img src="pyunkang.jpg"
-                 alt="Pyunkang Yul">
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Pyunkang Yul
-                </div>
-
-                <div class="product-desc">
-                    Produk pilihan yang saya rekomendasikan.
-                </div>
-
-                <div class="product-price">
-                    Cek Harga
-                </div>
-
-                <a href="https://s.shopee.co.id/2qUQQ7sSR7"
-                   target="_blank"
-                   class="buy-button">
+                <a
+                    href="https://s.shopee.co.id/2qUQQ7sSR7"
+                    target="_blank"
+                    class="buy-button"
+                >
                     🛒 Beli Sekarang
                 </a>
 
@@ -513,21 +513,27 @@
 
 
     <!-- =========================
-         FASHION OFFICE FAVORIT
+         FASHION FAVORIT
     ========================== -->
 
-    <div class="section-title" id="fashion">
-        👕 Fashion Office Favorit
+    <div
+        class="section-title"
+        id="fashion"
+    >
+        👕 Fashion Favorit
     </div>
 
     <div class="products">
+
 
         <!-- SHESIMPLY 1 -->
 
         <div class="product">
 
-            <img src="shesimply1.jpg"
-                 alt="SheSimply">
+            <img
+                src="shesimply1.jpg"
+                alt="SheSimply 1"
+            >
 
             <div class="product-info">
 
@@ -543,9 +549,11 @@
                     Cek Harga
                 </div>
 
-                <a href="https://s.shopee.co.id/5LBzgMHnKE"
-                   target="_blank"
-                   class="buy-button">
+                <a
+                    href="https://s.shopee.co.id/5LBzgMHnKE"
+                    target="_blank"
+                    class="buy-button"
+                >
                     🛒 Beli Sekarang
                 </a>
 
@@ -558,8 +566,10 @@
 
         <div class="product">
 
-            <img src="shesimply2.jpg"
-                 alt="SheSimply">
+            <img
+                src="shesimply2.jpg"
+                alt="SheSimply 2"
+            >
 
             <div class="product-info">
 
@@ -575,9 +585,11 @@
                     Cek Harga
                 </div>
 
-                <a href="https://s.shopee.co.id/6fhNGsk5v8"
-                   target="_blank"
-                   class="buy-button">
+                <a
+                    href="https://s.shopee.co.id/6fhNGsk5v8"
+                    target="_blank"
+                    class="buy-button"
+                >
                     🛒 Beli Sekarang
                 </a>
 
@@ -590,8 +602,10 @@
 
         <div class="product">
 
-            <img src="shesimply3.jpg"
-                 alt="SheSimply">
+            <img
+                src="shesimply3.jpg"
+                alt="SheSimply 3"
+            >
 
             <div class="product-info">
 
@@ -607,9 +621,11 @@
                     Cek Harga
                 </div>
 
-                <a href="https://s.shopee.co.id/AUu5q03I3i"
-                   target="_blank"
-                   class="buy-button">
+                <a
+                    href="https://s.shopee.co.id/AUu5q03I3i"
+                    target="_blank"
+                    class="buy-button"
+                >
                     🛒 Beli Sekarang
                 </a>
 
@@ -622,8 +638,10 @@
 
         <div class="product">
 
-            <img src="shesimply4.jpg"
-                 alt="SheSimply">
+            <img
+                src="shesimply4.jpg"
+                alt="SheSimply 4"
+            >
 
             <div class="product-info">
 
@@ -639,9 +657,11 @@
                     Cek Harga
                 </div>
 
-                <a href="https://s.shopee.co.id/2LYO72od2w"
-                   target="_blank"
-                   class="buy-button">
+                <a
+                    href="https://s.shopee.co.id/2LYO72od2w"
+                    target="_blank"
+                    class="buy-button"
+                >
                     🛒 Beli Sekarang
                 </a>
 
@@ -649,6 +669,70 @@
 
         </div>
 
+    </div>
+
+
+    <!-- =========================
+         ELEKTRONIK
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="electronic"
+    >
+        🎧 Elektronik
+    </div>
+
+    <div class="coming-soon">
+        Produk elektronik akan segera hadir ✨
+    </div>
+
+
+    <!-- =========================
+         BEAUTY
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="beauty"
+    >
+        💄 Beauty
+    </div>
+
+    <div class="coming-soon">
+        Produk beauty akan segera hadir ✨
+    </div>
+
+
+    <!-- =========================
+         RUMAH TANGGA
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="home"
+    >
+        🏠 Rumah Tangga
+    </div>
+
+    <div class="coming-soon">
+        Produk rumah tangga akan segera hadir ✨
+    </div>
+
+
+    <!-- =========================
+         SEMUA PRODUK
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="all"
+    >
+        ✨ Semua Produk
+    </div>
+
+    <div class="coming-soon">
+        Semua produk akan tampil di sini ✨
     </div>
 
 
