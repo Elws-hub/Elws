@@ -25,7 +25,10 @@
             margin: auto;
         }
 
-        /* PROFILE */
+        /* =========================
+           PROFILE
+        ========================== */
+
         .profile {
             text-align: center;
             margin-bottom: 25px;
@@ -52,7 +55,35 @@
             font-size: 14px;
         }
 
-        /* SOCIAL */
+
+        /* =========================
+           TOKO UTAMA
+        ========================== */
+
+        .main-store {
+            display: block;
+            background: #222;
+            color: white;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+            transition: 0.2s;
+        }
+
+        .main-store:hover {
+            transform: translateY(-3px);
+            background: #444;
+        }
+
+
+        /* =========================
+           SOCIAL MEDIA
+        ========================== */
+
         .social {
             display: flex;
             justify-content: center;
@@ -76,14 +107,22 @@
             transform: translateY(-3px);
         }
 
-        /* SECTION */
+
+        /* =========================
+           SECTION
+        ========================== */
+
         .section-title {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 15px;
         }
 
-        /* CATEGORY */
+
+        /* =========================
+           CATEGORY
+        ========================== */
+
         .categories {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -99,6 +138,7 @@
             color: #222;
             font-size: 14px;
             font-weight: bold;
+            text-align: center;
             box-shadow: 0 3px 12px rgba(0,0,0,0.06);
             transition: 0.2s;
         }
@@ -107,7 +147,11 @@
             transform: translateY(-3px);
         }
 
-        /* PRODUCT */
+
+        /* =========================
+           PRODUCT
+        ========================== */
+
         .products {
             display: flex;
             flex-direction: column;
@@ -168,7 +212,11 @@
             background: #444;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           FOOTER
+        ========================== */
+
         .footer {
             text-align: center;
             margin-top: 35px;
@@ -176,7 +224,11 @@
             color: #999;
         }
 
-        /* MOBILE */
+
+        /* =========================
+           MOBILE
+        ========================== */
+
         @media (max-width: 400px) {
 
             .profile h1 {
@@ -190,7 +242,13 @@
             .product img {
                 height: 210px;
             }
+
+            .social a {
+                padding: 10px 14px;
+                font-size: 13px;
+            }
         }
+
     </style>
 </head>
 
@@ -198,11 +256,16 @@
 
 <div class="container">
 
-    <!-- PROFILE -->
+
+    <!-- =========================
+         PROFILE
+    ========================== -->
+
     <div class="profile">
 
-        <!-- Nanti ganti profile.jpg dengan foto kamu -->
-       <img src="foto%20profil.jpeg" alt="Elws" class="profile-photo">
+        <img src="foto%20profil.jpeg"
+             alt="Elws"
+             class="profile-photo">
 
         <h1>Elws</h1>
 
@@ -211,21 +274,46 @@
     </div>
 
 
-    <!-- SOCIAL MEDIA -->
+    <!-- =========================
+         TOKO UTAMA
+    ========================== -->
+
+    <a href="https://collshp.com/glowofficestyle"
+       target="_blank"
+       class="main-store">
+
+        🛍️ Kunjungi Toko Saya
+
+    </a>
+
+
+    <!-- =========================
+         SOCIAL MEDIA
+    ========================== -->
+
     <div class="social">
 
-        <a href="https://www.instagram.com/elwsardiant?stkn=MWd2eDNqMDhvaHF3cQ==" target="_blank">
+        <a href="https://www.instagram.com/elwsardiant?stkn=MWd2eDNqMDhvaHF3cQ=="
+           target="_blank">
+
             📸 Instagram
+
         </a>
 
-        <a href="LINK_TIKTOK" target="_blank">
+        <a href="LINK_TIKTOK"
+           target="_blank">
+
             🎵 TikTok
+
         </a>
 
     </div>
 
 
-    <!-- CATEGORY -->
+    <!-- =========================
+         CATEGORY
+    ========================== -->
+
     <div class="section-title">
         Explore
     </div>
@@ -259,18 +347,26 @@
     </div>
 
 
-    <!-- PRODUCT -->
+    <!-- =========================
+         PRODUK REKOMENDASI
+    ========================== -->
+
     <div class="section-title" id="recommendation">
         🛒 Produk Rekomendasi
     </div>
 
+
     <div class="products">
 
-        <!-- SENKA -->
+
+        <!-- =====================
+             SENKA
+        ====================== -->
+
         <div class="product">
 
-            <!-- Ganti senka.jpg dengan foto produk -->
-            <img src="senka.jpg" alt="Senka">
+            <img src="senka.jpg"
+                 alt="Senka">
 
             <div class="product-info">
 
@@ -289,7 +385,9 @@
                 <a href="https://s.shopee.co.id/AAH18sDmZF"
                    target="_blank"
                    class="buy-button">
+
                     🛒 Beli Sekarang
+
                 </a>
 
             </div>
@@ -297,11 +395,14 @@
         </div>
 
 
-        <!-- PYUNKANG -->
+        <!-- =====================
+             PYUNKANG
+        ====================== -->
+
         <div class="product">
 
-            <!-- Ganti pyunkang.jpg dengan foto produk -->
-            <img src="pyunkang.jpg" alt="Pyunkang">
+            <img src="pyunkang.jpg"
+                 alt="Pyunkang Yul">
 
             <div class="product-info">
 
@@ -320,7 +421,9 @@
                 <a href="https://s.shopee.co.id/2qUQQ7sSR7"
                    target="_blank"
                    class="buy-button">
+
                     🛒 Beli Sekarang
+
                 </a>
 
             </div>
@@ -330,10 +433,14 @@
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <div class="footer">
         © 2026 Elws · Personal Profile & Product
     </div>
+
 
 </div>
 
