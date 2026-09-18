@@ -1,352 +1,3 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Elws | Personal Profile & Product</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #f8f8f8, #eeeeee);
-            color: #222;
-            padding: 30px 15px;
-        }
-
-        .container {
-            max-width: 520px;
-            margin: auto;
-        }
-
-        /* =========================
-           PROFILE
-        ========================== */
-
-        .profile {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .profile-photo {
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: #ddd;
-            margin-bottom: 15px;
-            border: 4px solid white;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
-        }
-
-        .profile h1 {
-            font-size: 30px;
-            margin-bottom: 6px;
-        }
-
-        .profile p {
-            color: #777;
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           TOKO UTAMA
-        ========================== */
-
-        .main-store {
-            display: block;
-            background: #222;
-            color: white;
-            padding: 16px;
-            margin: 20px 0;
-            border-radius: 14px;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-            transition: 0.2s;
-        }
-
-        .main-store:hover {
-            transform: translateY(-3px);
-            background: #444;
-        }
-
-
-        /* =========================
-           SOCIAL MEDIA
-        ========================== */
-
-        .social {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin: 20px 0 30px;
-        }
-
-        .social a {
-            text-decoration: none;
-            background: white;
-            color: #222;
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-size: 14px;
-            font-weight: bold;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-            transition: 0.2s;
-        }
-
-        .social a:hover {
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           SECTION
-        ========================== */
-
-        .section-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-
-        /* =========================
-           CATEGORY
-        ========================== */
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .category {
-            background: white;
-            padding: 15px;
-            border-radius: 14px;
-            text-decoration: none;
-            color: #222;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: center;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-            transition: 0.2s;
-        }
-
-        .category:hover {
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================
-           PRODUCT
-        ========================== */
-
-        .products {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .product {
-            background: white;
-            border-radius: 18px;
-            overflow: hidden;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-        }
-
-        .product img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .product-info {
-            padding: 18px;
-            text-align: left;
-        }
-
-        .product-name {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 6px;
-        }
-
-        .product-desc {
-            color: #777;
-            font-size: 13px;
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-
-        .product-price {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .buy-button {
-            display: block;
-            text-align: center;
-            background: #222;
-            color: white;
-            padding: 13px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.2s;
-        }
-
-        .buy-button:hover {
-            background: #444;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        .footer {
-            text-align: center;
-            margin-top: 35px;
-            font-size: 12px;
-            color: #999;
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================== */
-
-        @media (max-width: 400px) {
-
-            .profile h1 {
-                font-size: 26px;
-            }
-
-            .categories {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .product img {
-                height: 210px;
-            }
-
-            .social a {
-                padding: 10px 14px;
-                font-size: 13px;
-            }
-        }
-
-    </style>
-</head>
-
-<body>
-
-<div class="container">
-
-
-    <!-- =========================
-         PROFILE
-    ========================== -->
-
-    <div class="profile">
-
-        <img src="foto%20profil.jpeg"
-             alt="Elws"
-             class="profile-photo">
-
-        <h1>Elws</h1>
-
-        <p>Personal Profile & Product</p>
-
-    </div>
-
-
-    <!-- =========================
-         TOKO UTAMA
-    ========================== -->
-
-    <a href="https://collshp.com/glowofficestyle"
-       target="_blank"
-       class="main-store">
-
-        🛍️ Kunjungi Toko Saya
-
-    </a>
-
-
-    <!-- =========================
-         SOCIAL MEDIA
-    ========================== -->
-
-    <div class="social">
-
-        <a href="https://www.instagram.com/elwsardiant?stkn=MWd2eDNqMDhvaHF3cQ=="
-           target="_blank">
-
-            📸 Instagram
-
-        </a>
-
-        <a href="https://www.tiktok.com/@webid3"
-           target="_blank">
-
-            🎵 TikTok
-
-        </a>
-
-    </div>
-
-
-    <!-- =========================
-         CATEGORY
-    ========================== -->
-
-    <div class="section-title">
-        Explore
-    </div>
-
-    <div class="categories">
-
-        <a href="#trending" class="category">
-           🔥 Trending
-        </a>
-
-        <a href="#fashion" class="category">
-            👕 Fashion Office Favorit
-        </a>
-
-        <a href="#electronic" class="category">
-            🎧 Elektronik
-        </a>
-
-        <a href="#beauty" class="category">
-            💄 Beauty
-        </a>
-
-        <a href="#home" class="category">
-            🏠 Rumah Tangga
-        </a>
-
-        <a href="#all" class="category">
-            ✨ Semua Produk
-        </a>
-
-    </div>
-
-
     <!-- =========================
          PRODUK TRENDING
     ========================== -->
@@ -354,137 +5,8 @@
     <div class="section-title" id="trending">
         🔥 Trending
     </div>
-    <!-- FASHION FAVORIT -->
-<div class="section-title" id="fashion">
-    👕 Fashion Favorit
-</div>
-
-<div class="products">
-
-    <!-- SHESIMPLY 1 -->
-    <div class="product">
-
-        <img src="shesimply1.jpg" alt="SheSimply">
-
-        <div class="product-info">
-
-            <div class="product-name">
-                SheSimply
-            </div>
-
-            <div class="product-desc">
-                Fashion pilihan yang saya rekomendasikan.
-            </div>
-
-            <div class="product-price">
-                Cek Harga
-            </div>
-
-            <a href="https://s.shopee.co.id/5LBzgMHnKE"
-               target="_blank"
-               class="buy-button">
-                🛒 Beli Sekarang
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- SHESIMPLY 2 -->
-    <div class="product">
-
-        <img src="shesimply2.jpg" alt="SheSimply">
-
-        <div class="product-info">
-
-            <div class="product-name">
-                SheSimply
-            </div>
-
-            <div class="product-desc">
-                Fashion pilihan yang saya rekomendasikan.
-            </div>
-
-            <div class="product-price">
-                Cek Harga
-            </div>
-
-            <a href="https://s.shopee.co.id/6fhNGsk5v8"
-               target="_blank"
-               class="buy-button">
-                🛒 Beli Sekarang
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- SHESIMPLY 3 -->
-    <div class="product">
-
-        <img src="shesimply3.jpg" alt="SheSimply">
-
-        <div class="product-info">
-
-            <div class="product-name">
-                SheSimply
-            </div>
-
-            <div class="product-desc">
-                Fashion pilihan yang saya rekomendasikan.
-            </div>
-
-            <div class="product-price">
-                Cek Harga
-            </div>
-
-            <a href="https://s.shopee.co.id/AUu5q03I3i"
-               target="_blank"
-               class="buy-button">
-                🛒 Beli Sekarang
-            </a>
-
-        </div>
-
-    </div>
-
-
-    <!-- SHESIMPLY 4 -->
-    <div class="product">
-
-        <img src="shesimply4.jpg" alt="SheSimply">
-
-        <div class="product-info">
-
-            <div class="product-name">
-                SheSimply
-            </div>
-
-            <div class="product-desc">
-                Fashion pilihan yang saya rekomendasikan.
-            </div>
-
-            <div class="product-price">
-                Cek Harga
-            </div>
-
-            <a href="https://s.shopee.co.id/2LYO72od2w"
-               target="_blank"
-               class="buy-button">
-                🛒 Beli Sekarang
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
 
     <div class="products">
-
 
         <!-- =====================
              SENKA
@@ -512,9 +34,7 @@
                 <a href="https://s.shopee.co.id/AAH18sDmZF"
                    target="_blank"
                    class="buy-button">
-
                     🛒 Beli Sekarang
-
                 </a>
 
             </div>
@@ -548,9 +68,7 @@
                 <a href="https://s.shopee.co.id/2qUQQ7sSR7"
                    target="_blank"
                    class="buy-button">
-
                     🛒 Beli Sekarang
-
                 </a>
 
             </div>
@@ -561,15 +79,140 @@
 
 
     <!-- =========================
-         FOOTER
+         FASHION OFFICE FAVORIT
     ========================== -->
 
-    <div class="footer">
-        © 2026 Elws · Personal Profile & Product
+    <div class="section-title" id="fashion">
+        👕 Fashion Office Favorit
     </div>
 
+    <div class="products">
 
-</div>
+        <!-- SHESIMPLY 1 -->
 
-</body>
-</html>
+        <div class="product">
+
+            <img src="shesimply1.jpg"
+                 alt="SheSimply">
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SheSimply
+                </div>
+
+                <div class="product-desc">
+                    Fashion office pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a href="https://s.shopee.co.id/5LBzgMHnKE"
+                   target="_blank"
+                   class="buy-button">
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHESIMPLY 2 -->
+
+        <div class="product">
+
+            <img src="shesimply2.jpg"
+                 alt="SheSimply">
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SheSimply
+                </div>
+
+                <div class="product-desc">
+                    Fashion office pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a href="https://s.shopee.co.id/6fhNGsk5v8"
+                   target="_blank"
+                   class="buy-button">
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHESIMPLY 3 -->
+
+        <div class="product">
+
+            <img src="shesimply3.jpg"
+                 alt="SheSimply">
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SheSimply
+                </div>
+
+                <div class="product-desc">
+                    Fashion office pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a href="https://s.shopee.co.id/AUu5q03I3i"
+                   target="_blank"
+                   class="buy-button">
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHESIMPLY 4 -->
+
+        <div class="product">
+
+            <img src="shesimply4.jpg"
+                 alt="SheSimply">
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SheSimply
+                </div>
+
+                <div class="product-desc">
+                    Fashion office pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a href="https://s.shopee.co.id/2LYO72od2w"
+                   target="_blank"
+                   class="buy-button">
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
