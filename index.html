@@ -162,32 +162,47 @@
             display: block;
         }
 
-        /* GALERI FOTO SENKA */
-        .product-images {
-            display: flex;
-            gap: 8px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: thin;
-            -webkit-overflow-scrolling: touch;
-            padding: 8px 8px 10px;
-        }
-
-        .product-images img {
-            flex: 0 0 100%;
+        /* SENKA AUTO SLIDESHOW */
+        .senka-slideshow {
+            position: relative;
             width: 100%;
-            height: 180px;
-            object-fit: contain;
+            height: 190px;
+            overflow: hidden;
             background: #fff;
-            border-radius: 10px;
-            scroll-snap-align: start;
         }
 
-        .gallery-hint {
-            color: #888;
-            font-size: 11px;
-            text-align: center;
-            padding: 0 8px 8px;
+        .senka-slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
+            opacity: 0;
+            transition: opacity 0.7s ease-in-out;
+        }
+
+        .senka-slide.active {
+            opacity: 1;
+        }
+
+        .slide-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            padding: 9px 0 3px;
+        }
+
+        .slide-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #d0d0d0;
+            transition: background 0.3s;
+        }
+
+        .slide-dot.active {
+            background: #222;
         }
 
         .product-info {
@@ -275,8 +290,11 @@
                 gap: 10px;
             }
 
-            .product img,
-            .product-images img {
+            .product img {
+                height: 160px;
+            }
+
+            .senka-slideshow {
                 height: 160px;
             }
 
@@ -374,17 +392,33 @@
 
     <div class="products">
 
-        <!-- SENKA: 3 FOTO -->
+        <!-- SENKA AUTO SLIDESHOW -->
         <div class="product">
 
-            <div class="product-images">
-                <img src="senka1.jpeg" alt="Senka - Foto 1">
-                <img src="senka2.jpeg" alt="Senka - Foto 2">
-                <img src="senka3.jpeg" alt="Senka - Foto 3">
+            <div class="senka-slideshow">
+                <img
+                    src="senka1.jpeg"
+                    alt="Senka Foto 1"
+                    class="senka-slide active"
+                >
+
+                <img
+                    src="senka2.jpeg"
+                    alt="Senka Foto 2"
+                    class="senka-slide"
+                >
+
+                <img
+                    src="senka3.jpeg"
+                    alt="Senka Foto 3"
+                    class="senka-slide"
+                >
             </div>
 
-            <div class="gallery-hint">
-                ← Geser foto untuk melihat lainnya →
+            <div class="slide-indicators">
+                <span class="slide-dot active"></span>
+                <span class="slide-dot"></span>
+                <span class="slide-dot"></span>
             </div>
 
             <div class="product-info">
@@ -441,88 +475,60 @@
         <!-- SHESIMPLY 1 -->
         <div class="product">
             <img src="shesimply1.jpg" alt="SheSimply 1">
-
             <div class="product-info">
                 <div class="product-name">SheSimply</div>
                 <div class="product-desc">
                     Fashion office pilihan yang saya rekomendasikan.
                 </div>
                 <div class="product-price">Cek Harga</div>
-
-                <a
-                    href="https://s.shopee.co.id/5LBzgMHnKE"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="buy-button"
-                >
-                    🛒 Beli Sekarang
-                </a>
+                <a href="https://s.shopee.co.id/5LBzgMHnKE"
+                   target="_blank" rel="noopener noreferrer"
+                   class="buy-button">🛒 Beli Sekarang</a>
             </div>
         </div>
 
         <!-- SHESIMPLY 2 -->
         <div class="product">
             <img src="shesimply2.jpg" alt="SheSimply 2">
-
             <div class="product-info">
                 <div class="product-name">SheSimply</div>
                 <div class="product-desc">
                     Fashion office pilihan yang saya rekomendasikan.
                 </div>
                 <div class="product-price">Cek Harga</div>
-
-                <a
-                    href="https://s.shopee.co.id/6fhNGsk5v8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="buy-button"
-                >
-                    🛒 Beli Sekarang
-                </a>
+                <a href="https://s.shopee.co.id/6fhNGsk5v8"
+                   target="_blank" rel="noopener noreferrer"
+                   class="buy-button">🛒 Beli Sekarang</a>
             </div>
         </div>
 
         <!-- SHESIMPLY 3 -->
         <div class="product">
             <img src="shesimply3.jpg" alt="SheSimply 3">
-
             <div class="product-info">
                 <div class="product-name">SheSimply</div>
                 <div class="product-desc">
                     Fashion office pilihan yang saya rekomendasikan.
                 </div>
                 <div class="product-price">Cek Harga</div>
-
-                <a
-                    href="https://s.shopee.co.id/AUu5q03I3i"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="buy-button"
-                >
-                    🛒 Beli Sekarang
-                </a>
+                <a href="https://s.shopee.co.id/AUu5q03I3i"
+                   target="_blank" rel="noopener noreferrer"
+                   class="buy-button">🛒 Beli Sekarang</a>
             </div>
         </div>
 
         <!-- SHESIMPLY 4 -->
         <div class="product">
             <img src="shesimply4.jpg" alt="SheSimply 4">
-
             <div class="product-info">
                 <div class="product-name">SheSimply</div>
                 <div class="product-desc">
                     Fashion office pilihan yang saya rekomendasikan.
                 </div>
                 <div class="product-price">Cek Harga</div>
-
-                <a
-                    href="https://s.shopee.co.id/2LYO72od2w"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="buy-button"
-                >
-                    🛒 Beli Sekarang
-                </a>
+                <a href="https://s.shopee.co.id/2LYO72od2w"
+                   target="_blank" rel="noopener noreferrer"
+                   class="buy-button">🛒 Beli Sekarang</a>
             </div>
         </div>
 
@@ -530,28 +536,24 @@
 
     <!-- ELEKTRONIK -->
     <div class="section-title" id="electronic">🎧 Elektronik</div>
-
     <div class="coming-soon">
         Produk elektronik akan segera hadir ✨
     </div>
 
     <!-- BEAUTY -->
     <div class="section-title" id="beauty">💄 Beauty</div>
-
     <div class="coming-soon">
         Produk beauty akan segera hadir ✨
     </div>
 
     <!-- RUMAH TANGGA -->
     <div class="section-title" id="home">🏠 Rumah Tangga</div>
-
     <div class="coming-soon">
         Produk rumah tangga akan segera hadir ✨
     </div>
 
     <!-- SEMUA PRODUK -->
     <div class="section-title" id="all">✨ Semua Produk</div>
-
     <div class="coming-soon">
         Semua produk akan tampil di sini ✨
     </div>
@@ -562,6 +564,31 @@
     </div>
 
 </div>
+
+<!-- JAVASCRIPT: GANTI FOTO SENKA SETIAP 3 DETIK -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".senka-slide");
+        const dots = document.querySelectorAll(".slide-dot");
+
+        if (slides.length === 0) return;
+
+        let currentSlide = 0;
+
+        function showNextSlide() {
+            slides[currentSlide].classList.remove("active");
+            dots[currentSlide].classList.remove("active");
+
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            slides[currentSlide].classList.add("active");
+            dots[currentSlide].classList.add("active");
+        }
+
+        setInterval(showNextSlide, 3000);
+    });
+</script>
+
 </body>
 </html>
 ```
