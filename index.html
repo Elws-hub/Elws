@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elws | Discover Your Favorites</title>
   <meta name="description" content="Discover, explore, and find your favorites with Elws.">
-  
+
   <style>
     * {
       box-sizing: border-box;
@@ -191,31 +192,36 @@
       background: #5f435a;
     }
 
-    /* SENKA SLIDESHOW */
-    .senka-slideshow {
-      display: block;
+    /* SENKA AND BLOUSE SLIDESHOW */
+    .senka-slideshow,
+    .blouse-slideshow {
       position: relative;
+      display: block;
       width: 100%;
       aspect-ratio: 9 / 16;
       overflow: hidden;
       background: #ffffff;
     }
 
-    .senka-slide {
+    .senka-slide,
+    .blouse-slide {
       position: absolute;
       inset: 0;
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: contain;
       opacity: 0;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.5s ease;
       background: #ffffff;
     }
 
-    .senka-slide.active {
+    .senka-slide.active,
+    .blouse-slide.active {
       opacity: 1;
     }
 
+    /* SLIDESHOW DOTS */
     .slide-dots {
       display: flex;
       justify-content: center;
@@ -227,6 +233,7 @@
     .slide-dot {
       width: 7px;
       height: 7px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: #dfd2dd;
       transition: background 0.3s;
@@ -243,6 +250,7 @@
       margin-bottom: 28px;
       border-top: 1px solid #eadce8;
       border-bottom: 1px solid #eadce8;
+      scroll-margin-top: 20px;
     }
 
     .about-section h2 {
@@ -264,8 +272,7 @@
     }
 
     .footer-connect,
-    .footer-brand,
-    .footer-legal {
+    .footer-brand {
       text-align: center;
       margin-bottom: 22px;
     }
@@ -276,8 +283,7 @@
       margin-bottom: 8px;
     }
 
-    .footer-links,
-    .footer-legal {
+    .footer-links {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -286,8 +292,7 @@
       font-size: 12px;
     }
 
-    .footer-links a:hover,
-    .footer-legal a:hover {
+    .footer-links a:hover {
       color: #75576f;
       text-decoration: underline;
     }
@@ -355,29 +360,30 @@
         rel="noopener noreferrer"
       >TikTok</a>
 
-      <a href="https://collshp.com/glowofficestyle" target="_blank" rel="noopener noreferrer">
-        My Store
-      </a>
+      <a
+        href="https://collshp.com/glowofficestyle"
+        target="_blank"
+        rel="noopener noreferrer"
+      >My Store</a>
     </nav>
 
     <!-- CATEGORY NAVIGATION -->
     <nav class="category-nav" aria-label="Product categories">
-      <a href="#beauty">Beauty</a>
       <a href="#skincare">Skincare</a>
       <a href="#lifestyle">Lifestyle</a>
       <a href="#about">About Elws</a>
     </nav>
 
-    <!-- BEAUTY -->
-    <section class="section" id="beauty">
-      <h2 class="section-title">Beauty Favorites ✨</h2>
+    <!-- SKINCARE PICKS -->
+    <section class="section" id="skincare">
+      <h2 class="section-title">Skincare Picks 🌷</h2>
       <p class="section-description">
-        Products worth discovering and adding to your favorites.
+        Discover your skincare favorites.
       </p>
 
       <div class="product-grid">
 
-        <!-- SENKA: FOUR-PHOTO SLIDESHOW -->
+        <!-- SENKA -->
         <article class="product-card">
           <a
             class="product-image-link"
@@ -389,28 +395,28 @@
             <div class="senka-slideshow">
               <img
                 src="senka.jpeg"
-                alt="Senka product photo 1"
+                alt="Senka foto 1"
                 class="senka-slide active"
                 loading="eager"
               >
 
               <img
                 src="senka1.jpeg"
-                alt="Senka product photo 2"
+                alt="Senka foto 2"
                 class="senka-slide"
                 loading="lazy"
               >
 
               <img
                 src="senka2.jpeg"
-                alt="Senka product photo 3"
+                alt="Senka foto 3"
                 class="senka-slide"
                 loading="lazy"
               >
 
               <img
                 src="senka3.jpeg"
-                alt="Senka product photo 4"
+                alt="Senka foto 4"
                 class="senka-slide"
                 loading="lazy"
               >
@@ -470,208 +476,178 @@
       </div>
     </section>
 
+    <!-- LIFESTYLE FINDS -->
+    <section class="section" id="lifestyle">
+      <h2 class="section-title">Lifestyle Finds ☁️</h2>
+      <p class="section-description">
+        Explore lifestyle products and everyday favorites.
+      </p>
 
-<!-- SKINCARE PICKS -->
-<section class="section" id="skincare">
-  <h2 class="section-title">Skincare Picks 🌷</h2>
-  <p class="section-description">
-    Discover your skincare favorites.
-  </p>
+      <div class="product-grid">
 
-  <div class="product-grid">
+        <!-- SHESIMPLY 1 -->
+        <article class="product-card">
+          <a
+            class="product-image-link"
+            href="https://s.shopee.co.id/5LBzgMHnKE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="shesimply1.jpg"
+              alt="SheSimply product 1"
+              class="product-image"
+              loading="lazy"
+            >
+          </a>
 
-    <!-- SENKA -->
-    <article class="product-card">
-      <a
-        class="product-image-link"
-        href="https://s.shopee.co.id/AAH18sDmZF"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Lihat produk Senka di Shopee"
-      >
-        <div class="senka-slideshow">
-          <img src="senka.jpeg" alt="Senka foto 1"
-               class="senka-slide active">
-          <img src="senka1.jpeg" alt="Senka foto 2"
-               class="senka-slide">
-          <img src="senka2.jpeg" alt="Senka foto 3"
-               class="senka-slide">
-          <img src="senka3.jpeg" alt="Senka foto 4"
-               class="senka-slide">
-        </div>
-      </a>
+          <div class="product-info">
+            <h3>SheSimply</h3>
+            <p>Discover this favorite.</p>
 
-      <div class="slide-dots">
-        <span class="slide-dot active"></span>
-        <span class="slide-dot"></span>
-        <span class="slide-dot"></span>
-        <span class="slide-dot"></span>
+            <a
+              class="product-button"
+              href="https://s.shopee.co.id/5LBzgMHnKE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Product</a>
+          </div>
+        </article>
+
+        <!-- SHESIMPLY 2 -->
+        <article class="product-card">
+          <a
+            class="product-image-link"
+            href="https://s.shopee.co.id/6fhNGsk5v8"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="shesimply2.jpg"
+              alt="SheSimply product 2"
+              class="product-image"
+              loading="lazy"
+            >
+          </a>
+
+          <div class="product-info">
+            <h3>SheSimply</h3>
+            <p>Explore another pick.</p>
+
+            <a
+              class="product-button"
+              href="https://s.shopee.co.id/6fhNGsk5v8"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Product</a>
+          </div>
+        </article>
+
+        <!-- SHESIMPLY 3 -->
+        <article class="product-card">
+          <a
+            class="product-image-link"
+            href="https://s.shopee.co.id/AUu5q03I3i"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="shesimply3.jpg"
+              alt="SheSimply product 3"
+              class="product-image"
+              loading="lazy"
+            >
+          </a>
+
+          <div class="product-info">
+            <h3>SheSimply</h3>
+            <p>A product to discover.</p>
+
+            <a
+              class="product-button"
+              href="https://s.shopee.co.id/AUu5q03I3i"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Product</a>
+          </div>
+        </article>
+
+        <!-- SHESIMPLY 4 -->
+        <article class="product-card">
+          <a
+            class="product-image-link"
+            href="https://s.shopee.co.id/2LYO72od2w"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="shesimply4.jpg"
+              alt="SheSimply product 4"
+              class="product-image"
+              loading="lazy"
+            >
+          </a>
+
+          <div class="product-info">
+            <h3>SheSimply</h3>
+            <p>Find your next favorite.</p>
+
+            <a
+              class="product-button"
+              href="https://s.shopee.co.id/2LYO72od2w"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Product</a>
+          </div>
+        </article>
+
+        <!-- BLOUSE ATASAN WANITA -->
+        <article class="product-card">
+          <a
+            class="product-image-link"
+            href="https://s.shopee.co.id/5LChAh6cAv"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Lihat Blouse Atasan Wanita di Shopee"
+          >
+            <div class="blouse-slideshow">
+              <img
+                src="Blouse%20atasan%20wanita.jpeg"
+                alt="Blouse Atasan Wanita foto 1"
+                class="blouse-slide active"
+                loading="eager"
+              >
+
+              <img
+                src="Blouse%20atasan%20wanita2.jpeg"
+                alt="Blouse Atasan Wanita foto 2"
+                class="blouse-slide"
+                loading="lazy"
+              >
+            </div>
+          </a>
+
+          <div class="slide-dots blouse-dots"
+               aria-label="Blouse slideshow indicators">
+            <span class="slide-dot active"></span>
+            <span class="slide-dot"></span>
+          </div>
+
+          <div class="product-info">
+            <h3>Blouse Atasan Wanita</h3>
+            <p>Discover your lifestyle favorite.</p>
+
+            <a
+              class="product-button"
+              href="https://s.shopee.co.id/5LChAh6cAv"
+              target="_blank"
+              rel="noopener noreferrer"
+            >View Product</a>
+          </div>
+        </article>
+
       </div>
-
-      <div class="product-info">
-        <h3>Senka</h3>
-        <p>Discover your skincare favorite.</p>
-        <a class="product-button"
-           href="https://s.shopee.co.id/AAH18sDmZF"
-           target="_blank"
-           rel="noopener noreferrer">View Product</a>
-      </div>
-    </article>
-
-    <!-- PYUNKANG YUL -->
-    <article class="product-card">
-      <a
-        class="product-image-link"
-        href="https://s.shopee.co.id/2qUQQ7sSR7"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Lihat produk Pyunkang Yul di Shopee"
-      >
-        <img src="pyunkang.jpg"
-             alt="Pyunkang Yul"
-             class="product-image"
-             loading="lazy">
-      </a>
-
-      <div class="product-info">
-        <h3>Pyunkang Yul</h3>
-        <p>A skincare pick to explore.</p>
-        <a class="product-button"
-           href="https://s.shopee.co.id/2qUQQ7sSR7"
-           target="_blank"
-           rel="noopener noreferrer">View Product</a>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-
-   
-<!-- LIFESTYLE FINDS -->
-<section class="section" id="lifestyle">
-  <h2 class="section-title">Lifestyle Finds ☁️</h2>
-  <p class="section-description">
-    Explore lifestyle products and everyday favorites.
-  </p>
-
-  <div class="product-grid">
-
-    <!-- SHESIMPLY 1 -->
-    <article class="product-card">
-      <a class="product-image-link"
-         href="https://s.shopee.co.id/5LBzgMHnKE"
-         target="_blank" rel="noopener noreferrer">
-        <img src="shesimply1.jpg"
-             alt="SheSimply product 1"
-             class="product-image" loading="lazy">
-      </a>
-      <div class="product-info">
-        <h3>SheSimply</h3>
-        <p>Discover this favorite.</p>
-        <a class="product-button"
-           href="https://s.shopee.co.id/5LBzgMHnKE"
-           target="_blank" rel="noopener noreferrer">View Product</a>
-      </div>
-    </article>
-
-    <!-- SHESIMPLY 2 -->
-    <article class="product-card">
-      <a class="product-image-link"
-         href="https://s.shopee.co.id/6fhNGsk5v8"
-         target="_blank" rel="noopener noreferrer">
-        <img src="shesimply2.jpg"
-             alt="SheSimply product 2"
-             class="product-image" loading="lazy">
-      </a>
-      <div class="product-info">
-        <h3>SheSimply</h3>
-        <p>Explore another pick.</p>
-        <a class="product-button"
-           href="https://s.shopee.co.id/6fhNGsk5v8"
-           target="_blank" rel="noopener noreferrer">View Product</a>
-      </div>
-    </article>
-
-    <!-- SHESIMPLY 3 -->
-    <article class="product-card">
-      <a class="product-image-link"
-         href="https://s.shopee.co.id/AUu5q03I3i"
-         target="_blank" rel="noopener noreferrer">
-        <img src="shesimply3.jpg"
-             alt="SheSimply product 3"
-             class="product-image" loading="lazy">
-      </a>
-      <div class="product-info">
-        <h3>SheSimply</h3>
-        <p>A product to discover.</p>
-        <a class="product-button"
-           href="https://s.shopee.co.id/AUu5q03I3i"
-           target="_blank" rel="noopener noreferrer">View Product</a>
-      </div>
-    </article>
-
-    <!-- SHESIMPLY 4 -->
-    <article class="product-card">
-      <a class="product-image-link"
-         href="https://s.shopee.co.id/2LYO72od2w"
-         target="_blank" rel="noopener noreferrer">
-        <img src="shesimply4.jpg"
-             alt="SheSimply product 4"
-             class="product-image" loading="lazy">
-      </a>
-      <div class="product-info">
-        <h3>SheSimply</h3>
-        <p>Find your next favorite.</p>
-        <a class="product-button"
-           href="https://s.shopee.co.id/2LYO72od2w"
-           target="_blank" rel="noopener noreferrer">View Product</a>
-      </div>
-    </article>
-
-    
-<!-- BLOUSE ATASAN WANITA -->
-<article class="product-card">
-  <a
-    class="product-image-link"
-    href="https://s.shopee.co.id/5LChAh6cAv"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Lihat Blouse Atasan Wanita di Shopee"
-  >
-    <div class="blouse-slideshow">
-      <img
-        src="Blouse%20atasan%20wanita.jpeg"
-        alt="Blouse atasan wanita foto 1"
-        class="blouse-slide active"
-      >
-      <img
-        src="Blouse%20atasan%20wanita2.jpeg"
-        alt="Blouse atasan wanita foto 2"
-        class="blouse-slide"
-      >
-    </div>
-  </a>
-
-  <div class="slide-dots blouse-dots">
-    <span class="slide-dot active"></span>
-    <span class="slide-dot"></span>
-  </div>
-
-  <div class="product-info">
-    <h3>Blouse Atasan Wanita</h3>
-    <p>Discover your lifestyle favorite.</p>
-
-    <a
-      class="product-button"
-      href="https://s.shopee.co.id/5LChAh6cAv"
-      target="_blank"
-      rel="noopener noreferrer"
-    >View Product</a>
-  </div>
-</article>
-
-
+    </section>
 
     <!-- ABOUT ELWS -->
     <section class="about-section" id="about">
@@ -682,78 +658,90 @@
       </p>
     </section>
 
+    <!-- FOOTER -->
+    <footer class="footer">
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-connect">
-    <h3>Let's connect!</h3>
+      <div class="footer-connect">
+        <h3>Let's connect!</h3>
 
-    <div class="footer-links">
-      <a
-        href="https://www.instagram.com/elwsardiant?stkn=MWd2eDNqMDhvaHF3cQ=="
-        target="_blank"
-        rel="noopener noreferrer"
-      >Instagram</a>
+        <div class="footer-links">
+          <a
+            href="https://www.instagram.com/elwsardiant?stkn=MWd2eDNqMDhvaHF3cQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+          >Instagram</a>
 
-      <span>·</span>
+          <span>·</span>
 
-      <a
-        href="https://www.tiktok.com/@webid3"
-        target="_blank"
-        rel="noopener noreferrer"
-      >TikTok</a>
+          <a
+            href="https://www.tiktok.com/@webid3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >TikTok</a>
 
-      <span>·</span>
+          <span>·</span>
 
-      <a href="mailto:elws@example.com">Contact</a>
-    </div>
-  </div>
+          <a href="mailto:elws@example.com">Contact</a>
+        </div>
+      </div>
 
-  <div class="footer-brand">
-    <h3>Elws.</h3>
-    <p>Discover · Explore · Find Your Favorites</p>
-  </div>
+      <div class="footer-brand">
+        <h3>Elws.</h3>
+        <p>Discover · Explore · Find Your Favorites</p>
+      </div>
 
-  <div class="footer-copyright">
-    © 2026 Elws. All rights reserved.
-  </div>
-</footer>
+      <div class="footer-copyright">
+        © 2026 Elws. All rights reserved.
+      </div>
+
+    </footer>
 
   </main>
 
-  <!-- SENKA SLIDESHOW SCRIPT -->
+  <!-- SENKA DAN BLOUSE SLIDESHOW -->
   <script>
-    (function () {
-      const slideshow = document.querySelector(".senka-slideshow");
+    function startSlideshow(slideshowSelector, slideSelector, dotSelector) {
+      document.querySelectorAll(slideshowSelector).forEach(function (slideshow) {
+        const slides = slideshow.querySelectorAll(slideSelector);
+        const productCard = slideshow.closest(".product-card");
+        const dots = productCard
+          ? productCard.querySelectorAll(dotSelector)
+          : [];
 
-      if (!slideshow) return;
+        if (slides.length < 2) return;
 
-      const slides = slideshow.querySelectorAll(".senka-slide");
-      const dotsContainer = document.querySelector(".slide-dots");
-      const dots = dotsContainer
-        ? dotsContainer.querySelectorAll(".slide-dot")
-        : [];
+        let currentIndex = 0;
 
-      if (slides.length === 0) return;
+        window.setInterval(function () {
+          slides[currentIndex].classList.remove("active");
 
-      let currentIndex = 0;
+          if (dots[currentIndex]) {
+            dots[currentIndex].classList.remove("active");
+          }
 
-      function showSlide(index) {
-        slides.forEach(function (slide, i) {
-          slide.classList.toggle("active", i === index);
-        });
+          currentIndex = (currentIndex + 1) % slides.length;
 
-        dots.forEach(function (dot, i) {
-          dot.classList.toggle("active", i === index);
-        });
+          slides[currentIndex].classList.add("active");
 
-        currentIndex = index;
-      }
+          if (dots[currentIndex]) {
+            dots[currentIndex].classList.add("active");
+          }
+        }, 2500);
+      });
+    }
 
-      window.setInterval(function () {
-        showSlide((currentIndex + 1) % slides.length);
-      }, 3000);
-    })();
+    startSlideshow(
+      ".senka-slideshow",
+      ".senka-slide",
+      ".slide-dot"
+    );
+
+    startSlideshow(
+      ".blouse-slideshow",
+      ".blouse-slide",
+      ".blouse-dots .slide-dot"
+    );
   </script>
+
 </body>
 </html>
