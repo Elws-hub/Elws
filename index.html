@@ -1,406 +1,751 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Elws. | Beauty, Fashion & Lifestyle</title>
-
-    <meta
-        name="description"
-        content="Temukan inspirasi beauty, fashion, lifestyle, dan rekomendasi produk pilihan untuk keseharianmu di Elws."
-    >
+    <title>Elws | Personal Profile & Product</title>
 
     <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 20px;
         }
 
         body {
-            margin: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: #f8f8f8;
+            background: linear-gradient(135deg, #f8f8f8, #eeeeee);
             color: #222;
+            padding: 30px 15px;
         }
 
-        a {
-            -webkit-tap-highlight-color: transparent;
+        .container {
+            max-width: 520px;
+            margin: auto;
         }
 
-        /* HEADER */
-        header {
+
+        /* =========================
+           PROFILE
+        ========================== */
+
+        .profile {
             text-align: center;
-            padding: 35px 15px 25px;
-            background: #fff;
+            margin-bottom: 25px;
         }
 
         .profile-photo {
-            width: 100px;
-            height: 100px;
+            width: 95px;
+            height: 95px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #eee;
+            background: #ddd;
+            margin-bottom: 15px;
+            border: 4px solid white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
         }
 
-        header h1 {
-            margin: 12px 0 5px;
-            font-size: 27px;
-            letter-spacing: 1px;
+        .profile h1 {
+            font-size: 30px;
+            margin-bottom: 6px;
         }
 
-        header p {
-            margin: 0;
+        .profile p {
             color: #777;
             font-size: 14px;
         }
 
-        .main-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
+
+        /* =========================
+           TOKO UTAMA
+        ========================== */
+
+        .main-store {
+            display: block;
             background: #222;
-            color: #fff;
+            color: white;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 14px;
             text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+            transition: 0.2s;
+        }
+
+        .main-store:hover {
+            transform: translateY(-3px);
+            background: #444;
+        }
+
+
+        /* =========================
+           SOCIAL MEDIA
+        ========================== */
+
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 20px 0 30px;
+        }
+
+        .social a {
+            text-decoration: none;
+            background: white;
+            color: #222;
+            padding: 10px 18px;
             border-radius: 25px;
             font-size: 14px;
-            transition: background 0.2s;
+            font-weight: bold;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: 0.2s;
         }
 
-        .main-button:hover,
-        .buy-button:hover {
-            background: #555;
+        .social a:hover {
+            transform: translateY(-3px);
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 16px;
+
+        /* =========================
+           SECTION TITLE
+        ========================== */
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-top: 10px;
         }
 
-        .social-links a {
-            color: #333;
-            text-decoration: none;
-            font-size: 13px;
-            border: 1px solid #ddd;
-            padding: 8px 14px;
-            border-radius: 20px;
-        }
 
-        /* MAIN CONTENT */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 25px 15px 45px;
-        }
+        /* =========================
+           CATEGORY
+        ========================== */
 
-        /* CATEGORY MENU */
-        .category-menu {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
             margin-bottom: 35px;
         }
 
-        .category-menu a {
-            display: inline-block;
-            background: #fff;
-            color: #333;
+        .category {
+            background: white;
+            padding: 15px;
+            border-radius: 14px;
             text-decoration: none;
-            border: 1px solid #e5e5e5;
-            padding: 10px 15px;
-            border-radius: 22px;
-            font-size: 13px;
+            color: #222;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+            transition: 0.2s;
         }
 
-        .category-menu a:hover {
-            background: #222;
-            color: #fff;
+        .category:hover {
+            transform: translateY(-3px);
         }
 
-        /* SECTION */
-        .product-section {
-            margin-bottom: 38px;
-        }
 
-        .section-title {
-            font-size: 21px;
-            margin: 0 0 17px;
-        }
+        /* =========================
+           PRODUCT GRID
+        ========================== */
 
-        /* PRODUCT GRID */
-        .product-grid {
+        .products {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 35px;
         }
 
         .product {
-            min-width: 0;
+            background: white;
+            border-radius: 18px;
             overflow: hidden;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.2s;
         }
 
-        /*
-           SENKA SLIDESHOW
-           Area gambar menggunakan rasio 9:16.
-           object-fit: contain menjaga seluruh gambar tetap terlihat.
-        */
-        .senka-slideshow {
-            position: relative;
+        .product:hover {
+            transform: translateY(-4px);
+        }
+
+        .product img {
             width: 100%;
-            aspect-ratio: 9 / 16;
-            overflow: hidden;
-            background: #fff;
-        }
-
-        .senka-slide {
-            position: absolute;
-            inset: 0;
+            height: 180px;
+            object-fit: cover;
             display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            object-position: center;
-            padding: 5px;
-            opacity: 0;
-            transition: opacity 0.7s ease-in-out;
         }
 
-        .senka-slide.active {
-            opacity: 1;
-        }
-
-        .slide-indicators {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 7px;
-            padding: 10px 0 5px;
-            background: #fff;
-        }
-
-        .slide-dot {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #d0d0d0;
-            transition: background 0.3s;
-        }
-
-        .slide-dot.active {
-            background: #222;
-        }
-
-        /* OTHER PRODUCT IMAGES */
-        .product-image {
-            display: block;
-            width: 100%;
-            aspect-ratio: 9 / 16;
-            height: auto;
-            object-fit: contain;
-            object-position: center;
-            padding: 5px;
-            background: #fff;
-        }
-
-        /* PRODUCT DETAILS */
         .product-info {
-            padding: 13px;
+            padding: 14px;
+            text-align: left;
         }
 
-        .product-info h3 {
-            margin: 0 0 8px;
-            font-size: 15px;
-            line-height: 1.5;
+        .product-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 6px;
         }
 
-        .product-info p {
-            margin: 0 0 14px;
+        .product-desc {
+            color: #777;
             font-size: 12px;
-            line-height: 1.6;
-            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 12px;
         }
 
         .buy-button {
             display: block;
-            width: 100%;
-            padding: 11px 8px;
+            text-align: center;
             background: #222;
-            color: #fff;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 7px;
-            font-size: 12px;
-            line-height: 1.4;
-            transition: background 0.2s;
-        }
-
-        /* EMPTY CATEGORY */
-        .empty-section {
-            padding: 25px 15px;
-            background: #fff;
-            border: 1px dashed #ddd;
+            color: white;
+            padding: 10px;
             border-radius: 10px;
-            color: #777;
-            font-size: 14px;
-            line-height: 1.6;
-            text-align: center;
-        }
-
-        /* FOOTER */
-        .site-footer {
-            background: #fff;
-            border-top: 1px solid #eee;
-            padding: 42px 20px 25px;
-            text-align: center;
-            color: #333;
-        }
-
-        .footer-about,
-        .footer-connect,
-        .footer-brand {
-            max-width: 600px;
-            margin: 0 auto 28px;
-        }
-
-        .footer-about h2 {
-            font-size: 22px;
-            margin: 0 0 13px;
-        }
-
-        .footer-about p {
-            max-width: 550px;
-            margin: 0 auto;
-            font-size: 14px;
-            line-height: 1.9;
-            color: #666;
-        }
-
-        .footer-connect h3 {
-            font-size: 16px;
-            margin: 0 0 13px;
-        }
-
-        .footer-links,
-        .footer-legal {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 9px;
-            font-size: 13px;
-        }
-
-        .footer-links a,
-        .footer-legal a {
-            color: #555;
             text-decoration: none;
-        }
-
-        .footer-links a:hover,
-        .footer-legal a:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-
-        .footer-brand h3 {
-            margin: 0 0 8px;
-            font-size: 27px;
-            letter-spacing: 1px;
-        }
-
-        .footer-brand p {
-            margin: 0;
             font-size: 13px;
-            color: #777;
+            font-weight: bold;
+            transition: 0.2s;
         }
 
-        .footer-legal {
-            margin-bottom: 22px;
+        .buy-button:hover {
+            background: #444;
         }
 
-        .footer-copyright {
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            font-size: 12px;
-            line-height: 1.7;
+
+        /* =========================
+           EMPTY CATEGORY
+        ========================== */
+
+        .coming-soon {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
             color: #888;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.06);
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 480px) {
-            header {
-                padding-top: 28px;
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        .footer {
+            text-align: center;
+            margin-top: 35px;
+            font-size: 12px;
+            color: #999;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 400px) {
+
+            body {
+                padding: 25px 12px;
             }
 
-            .container {
-                padding: 20px 12px 35px;
+            .profile h1 {
+                font-size: 26px;
             }
 
-            .product-grid {
-                gap: 10px;
-            }
-
-            .product-info {
-                padding: 10px;
-            }
-
-            .product-info h3 {
-                font-size: 13px;
-            }
-
-            .product-info p {
-                font-size: 11px;
-            }
-
-            .buy-button {
-                font-size: 11px;
-            }
-
-            .section-title {
-                font-size: 19px;
-            }
-
-            .category-menu {
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
             }
 
-            .category-menu a {
-                padding: 9px 11px;
-                font-size: 12px;
-            }
-
-            .site-footer {
-                padding: 33px 16px 22px;
-            }
-
-            .footer-about p {
+            .category {
+                padding: 13px 8px;
                 font-size: 13px;
             }
 
-            .footer-legal {
-                gap: 7px;
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .product img {
+                height: 160px;
+            }
+
+            .product-info {
+                padding: 12px;
+            }
+
+            .product-name {
+                font-size: 15px;
+            }
+
+            .product-desc {
+                font-size: 11px;
+            }
+
+            .product-price {
+                font-size: 15px;
+            }
+
+            .buy-button {
+                padding: 9px 5px;
                 font-size: 12px;
             }
+
+            .social {
+                gap: 8px;
+            }
+
+            .social a {
+                padding: 10px 14px;
+                font-size: 13px;
+            }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- HEADER / PROFILE -->
-    <header>
+<div class="container">
+
+
+    <!-- =========================
+         PROFILE
+    ========================== -->
+
+    <div class="profile">
+
         <img
             src="foto%20profil.jpeg"
-           
+            alt="Elws"
+            class="profile-photo"
+        >
+
+        <h1>Elws</h1>
+
+        <p>Personal Profile & Product</p>
+
+    </div>
+
+
+    <!-- =========================
+         TOKO UTAMA
+    ========================== -->
+
+    <a
+        href="https://collshp.com/glowofficestyle"
+        target="_blank"
+        class="main-store"
+    >
+        🛍️ Kunjungi Toko Saya
+    </a>
+
+
+    <!-- =========================
+         SOCIAL MEDIA
+    ========================== -->
+
+    <div class="social">
+
+        <a
+            href="https://www.instagram.com/elwsardiant?stkn=MWd2eDNqMDhvaHF3cQ=="
+            target="_blank"
+        >
+            📸 Instagram
+        </a>
+
+        <a
+            href="https://www.tiktok.com/@webid3"
+            target="_blank"
+        >
+            🎵 TikTok
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         CATEGORY
+    ========================== -->
+
+    <div class="section-title">
+        Explore
+    </div>
+
+    <div class="categories">
+
+        <a href="#trending" class="category">
+            🔥 Trending
+        </a>
+
+        <a href="#fashion" class="category">
+            👕 Fashion Favorit
+        </a>
+
+        <a href="#electronic" class="category">
+            🎧 Elektronik
+        </a>
+
+        <a href="#beauty" class="category">
+            💄 Beauty
+        </a>
+
+        <a href="#home" class="category">
+            🏠 Rumah Tangga
+        </a>
+
+        <a href="#all" class="category">
+            ✨ Semua Produk
+        </a>
+
+    </div>
+
+
+    <!-- =========================
+         TRENDING
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="trending"
+    >
+        🔥 Trending
+    </div>
+
+    <div class="products">
+
+
+        <!-- SENKA -->
+
+        <div class="product">
+
+            <img
+                src="senka.jpg"
+                alt="Senka"
+            >
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Senka
+                </div>
+
+                <div class="product-desc">
+                    Produk pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a
+                    href="https://s.shopee.co.id/AAH18sDmZF"
+                    target="_blank"
+                    class="buy-button"
+                >
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PYUNKANG YUL -->
+
+        <div class="product">
+
+            <img
+                src="pyunkang.jpg"
+                alt="Pyunkang Yul"
+            >
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Pyunkang Yul
+                </div>
+
+                <div class="product-desc">
+                    Produk pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a
+                    href="https://s.shopee.co.id/2qUQQ7sSR7"
+                    target="_blank"
+                    class="buy-button"
+                >
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FASHION FAVORIT
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="fashion"
+    >
+        👕 Fashion Favorit
+    </div>
+
+    <div class="products">
+
+
+        <!-- SHESIMPLY 1 -->
+
+        <div class="product">
+
+            <img
+                src="shesimply1.jpg"
+                alt="SheSimply 1"
+            >
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SheSimply
+                </div>
+
+                <div class="product-desc">
+                    Fashion office pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a
+                    href="https://s.shopee.co.id/5LBzgMHnKE"
+                    target="_blank"
+                    class="buy-button"
+                >
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHESIMPLY 2 -->
+
+        <div class="product">
+
+            <img
+                src="shesimply2.jpg"
+                alt="SheSimply 2"
+            >
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SheSimply
+                </div>
+
+                <div class="product-desc">
+                    Fashion office pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a
+                    href="https://s.shopee.co.id/6fhNGsk5v8"
+                    target="_blank"
+                    class="buy-button"
+                >
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHESIMPLY 3 -->
+
+        <div class="product">
+
+            <img
+                src="shesimply3.jpg"
+                alt="SheSimply 3"
+            >
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SheSimply
+                </div>
+
+                <div class="product-desc">
+                    Fashion office pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a
+                    href="https://s.shopee.co.id/AUu5q03I3i"
+                    target="_blank"
+                    class="buy-button"
+                >
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHESIMPLY 4 -->
+
+        <div class="product">
+
+            <img
+                src="shesimply4.jpg"
+                alt="SheSimply 4"
+            >
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    SheSimply
+                </div>
+
+                <div class="product-desc">
+                    Fashion office pilihan yang saya rekomendasikan.
+                </div>
+
+                <div class="product-price">
+                    Cek Harga
+                </div>
+
+                <a
+                    href="https://s.shopee.co.id/2LYO72od2w"
+                    target="_blank"
+                    class="buy-button"
+                >
+                    🛒 Beli Sekarang
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ELEKTRONIK
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="electronic"
+    >
+        🎧 Elektronik
+    </div>
+
+    <div class="coming-soon">
+        Produk elektronik akan segera hadir ✨
+    </div>
+
+
+    <!-- =========================
+         BEAUTY
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="beauty"
+    >
+        💄 Beauty
+    </div>
+
+    <div class="coming-soon">
+        Produk beauty akan segera hadir ✨
+    </div>
+
+
+    <!-- =========================
+         RUMAH TANGGA
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="home"
+    >
+        🏠 Rumah Tangga
+    </div>
+
+    <div class="coming-soon">
+        Produk rumah tangga akan segera hadir ✨
+    </div>
+
+
+    <!-- =========================
+         SEMUA PRODUK
+    ========================== -->
+
+    <div
+        class="section-title"
+        id="all"
+    >
+        ✨ Semua Produk
+    </div>
+
+    <div class="coming-soon">
+        Semua produk akan tampil di sini ✨
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <div class="footer">
+        © 2026 Elws · Personal Profile & Product
+    </div>
+
+
+</div>
+
+</body>
+</html>
